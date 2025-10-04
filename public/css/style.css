@@ -186,6 +186,10 @@ img.animated.pulse {
     opacity: 2;
 }   
 
+.br-class{
+    border-radius: 13px;
+}
+
 .img-block .img-float{
     position:absolute;
     bottom:-70px;
@@ -213,15 +217,24 @@ img.animated.pulse {
 
 .bblock{
     background-color: #B68760;
-    height:85vh;
-    position:relative
+    height:65vh;
+    position:relative;
+    margin-top:150px;
+}
+
+.ht-class{
+    max-height:50vw;
+}
+
+.mg-top{
+    margin-top:150px;
 }
 
 .fblock{
     position:absolute;
     top:20px;
     left:20px;
-    height:85vh;
+    height:65vh;
     width:100%;
     background: url("../img/infoHero.jpeg");
     background-position: center;
@@ -442,7 +455,7 @@ img.animated.pulse {
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--bs-primary);
+    color:#B68760;
 }
 
 .footer .btn.btn-link::before {

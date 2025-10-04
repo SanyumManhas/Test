@@ -1,5 +1,9 @@
+import { useState } from 'react';
 import Navbar from './Navbar'
+import { Link } from 'react-router-dom';
 export default function Explore(){
+    const array = Array.from({length:6}, ()=> {});
+
     return(
         <>
             <Navbar/>
@@ -11,68 +15,27 @@ export default function Explore(){
 
             <div class="container">
             <div class="row g-4 p-4">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s" data-wow-offset='20'>
-                    <div class="product-item h-100 p-4 rounded">
-                        <img class="img-fluid mb-4 rounded" src="img/infoHero.jpeg" alt=""/>
-                        <div className="p-2">
-                            <h6 class="mb-2">Frosted Brew Candle</h6>
-                            <p class=" text-main" style={{fontSize:'13px'}}>
-                                frosted brew candle with aromatic experience of coffee and wax
-                            </p>
-                            <div className='m-0 d-flex justify-content-between'>
-                                <span>Price</span>
-                                 <span className='text-dark'>Rs. 250</span>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s" data-wow-offset='20'>
-                    <div class="product-item h-100 p-4 rounded">
-                        <img class="img-fluid mb-4 rounded" src="img/infoHero.jpeg" alt=""/>
-                        <div className="p-2">
-                            <h6 class="mb-2">Frosted Brew Candle</h6>
-                            <p class=" text-main" style={{fontSize:'13px'}}>
-                                frosted brew candle with aromatic experience of coffee and wax
-                            </p>
-                            <div className='m-0 d-flex justify-content-between'>
-                                <span>Price</span>
-                                 <span className='text-dark'>Rs. 250</span>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s" data-wow-offset='20'>
-                    <div class="product-item h-100 p-4 rounded">
-                        <img class="img-fluid mb-4 rounded" src="img/infoHero.jpeg" alt=""/>
-                        <div className="p-2">
-                            <h6 class="mb-2">Frosted Brew Candle</h6>
-                            <p class=" text-main" style={{fontSize:'13px'}}>
-                                frosted brew candle with aromatic experience of coffee and wax
-                            </p>
-                            <div className='m-0 d-flex justify-content-between'>
-                                <span>Price</span>
-                                 <span className='text-dark'>Rs. 250</span>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s" data-wow-offset='20'>
-                    <div class="product-item h-100 p-4 rounded">
-                        <img class="img-fluid mb-4 rounded" src="img/infoHero.jpeg" alt=""/>
-                        <div className="p-2">
-                            <h6 class="mb-2">Frosted Brew Candle</h6>
-                            <p class=" text-main" style={{fontSize:'13px'}}>
-                                frosted brew candle with aromatic experience of coffee and wax
-                            </p>
-                            <div className='m-0 d-flex justify-content-between'>
-                                <span>Price</span>
-                                 <span className='text-dark'>Rs. 250</span>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-                 
-
+                {
+                    array.map((_,i)=>{
+                        let delay = 0.1 + 0.1*i;
+                        return(
+                             <Link to="/product" className="col-6 col-sm-6 col-md-6 col-lg-3 wow fadeIn" data-wow-delay={`${delay}s`}>
+                                <div class="product-item p-0 rounded">
+                                    <img className="img-fluid mb-2 p-2 h-50 br-class" src="img/infoHero.jpeg" alt=""/>
+                                    <div className="p-0">
+                                        <h6 class="mb-2 ps-2" style={{fontSize:"0.9em"}}>Frosted Brew Candle</h6>
+                                        <p class="mb-1 text-dark ps-2 pe-2" style={{fontSize:'0.7em'}}>
+                                            frosted brew candle with experience of coffee and wax
+                                        </p>
+                                        <span class="text-dark d-flex pe-2 pb-1 justify-content-end" style={{fontSize:'1em'}}>
+                                        ₹ 200</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        );
+                    })               
+                }
+               
                 
                 
             </div>
